@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BGNR.ID | Client Login</title>
     <style>
-        /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-            background-color: #f9f9f9; /* Background sedikit abu agar card terlihat menonjol */
-            color: #333;
+            background-color: #f9f9f9;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
-
-        /* --- LOGIN CARD --- */
         .login-card {
             background: #ffffff;
             padding: 50px 40px;
@@ -27,136 +22,43 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
-            border-top: 5px solid #c5a059; /* Aksen emas khas */
+            border-top: 5px solid #c5a059;
         }
-
-        .login-card img {
-            height: 60px;
-            width: auto;
-            margin-bottom: 30px;
-        }
-
-        .login-card h2 {
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: #1a1a1a;
-        }
-
-        /* --- FORM STYLING --- */
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .input-group {
-            text-align: left;
-        }
-
-        .input-group label {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #777;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .login-form input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: inherit;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .login-form input:focus {
-            border-color: #c5a059;
-            box-shadow: 0 0 8px rgba(197, 160, 89, 0.2);
-        }
-
-        /* --- BUTTONS --- */
-        .btn-login {
-            background-color: #e62129; /* Merah aksen Apparel */
-            color: #fff;
-            border: none;
-            padding: 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-login:hover {
-            background-color: #c51a20;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(230, 33, 41, 0.3);
-        }
-
-        /* --- LINKS --- */
-        .extra-links {
-            margin-top: 25px;
-            font-size: 13px;
-        }
-
-        .extra-links a {
-            text-decoration: none;
-            color: #c5a059;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .extra-links a:hover {
-            color: #1a1a1a;
-        }
-
-        .back-home {
-            margin-top: 20px;
-            display: inline-block;
-            font-size: 11px;
-            text-decoration: none;
-            color: #bbb;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .back-home:hover { color: #333; }
+        .login-card img { height: 60px; margin-bottom: 30px; }
+        .login-card h2 { letter-spacing: 4px; text-transform: uppercase; margin-bottom: 25px; font-size: 1.2rem; }
+        .login-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+        .login-form label { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #777; margin-bottom: 5px; display: block; }
+        .login-form input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; outline: none; }
+        .login-form input:focus { border-color: #c5a059; }
+        .btn-login { background-color: #e62129; color: #fff; border: none; padding: 15px; border-radius: 50px; font-weight: bold; text-transform: uppercase; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .btn-login:hover { background-color: #c51a20; }
+        .extra-links { margin-top: 25px; font-size: 13px; }
+        .extra-links a { text-decoration: none; color: #c5a059; font-weight: 600; }
+        .back-home { margin-top: 20px; display: inline-block; font-size: 11px; text-decoration: none; color: #bbb; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div class="login-card">
         <img src="logo-bgnr.png" alt="BGNR.ID Logo">
-        
         <h2>Client Portal</h2>
         
         <form class="login-form">
-            <div class="input-group">
+            <div>
                 <label>Email Address</label>
                 <input type="email" placeholder="Masukkan email anda" required>
             </div>
-            
-            <div class="input-group">
+            <div>
                 <label>Password</label>
                 <input type="password" placeholder="••••••••" required>
             </div>
-            
-            <button type="submit" class="btn-login">Masuk ke Akun</button>
+            <button type="button" onclick="window.location.href='dashboard.html'" class="btn-login">Masuk ke Akun</button>
         </form>
         
         <div class="extra-links">
-    <p>Belum punya akun? <a href="register.html">Daftar Sekarang</a></p>
-    <p style="margin-top: 10px;"><a href="#">Lupa Password?</a></p>
-</div>>
+            <p>Belum punya akun? <a href="register.html">Daftar Sekarang</a></p>
+            <p style="margin-top: 10px;"><a href="#">Lupa Password?</a></p>
+        </div>
 
         <a href="index.html" class="back-home">← Kembali ke Beranda</a>
     </div>
