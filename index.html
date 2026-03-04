@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kado's | Home</title>
+    <title>Thecons Digital | Home</title>
     <style>
-        /* Reset Dasar */
+        /* --- RESET DASAR --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
             background-color: #ffffff;
             color: #333;
             display: flex;
@@ -17,13 +17,17 @@
             min-height: 100vh;
         }
 
-        /* --- Navigasi Classic --- */
+        /* --- NAVIGASI CLASSIC & DROPDOWN --- */
         nav {
             background-color: #ffffff;
-            padding: 30px 0;
-            border-bottom: 4px solid #c5a059;
+            padding: 25px 0;
+            border-bottom: 4px solid #c5a059; /* Garis Emas */
             display: flex;
             justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav ul {
@@ -33,13 +37,13 @@
         }
 
         nav ul li {
-            position: relative; /* Penting untuk posisi dropdown */
+            position: relative;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #444;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -50,81 +54,172 @@
             color: #c5a059;
         }
 
-        /* --- Logika Dropdown --- */
+        /* Gaya Dropdown */
         .dropdown-content {
-            display: none; /* Sembunyi secara default */
+            display: none;
             position: absolute;
             background-color: #ffffff;
-            min-width: 160px;
+            min-width: 180px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
             z-index: 1;
-            top: 100%; /* Muncul tepat di bawah menu utama */
-            border-top: 2px solid #c5a059;
+            top: 100%;
+            border-top: 3px solid #c5a059;
+            margin-top: 10px;
         }
 
         .dropdown-content a {
             color: #333;
-            padding: 12px 16px;
-            text-transform: none; /* Dropdown tidak harus kapital semua */
+            padding: 12px 20px;
+            text-transform: none;
             letter-spacing: 1px;
             display: block;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
         }
 
         .dropdown-content a:hover {
-            background-color: #f9f9f9;
+            background-color: #fffaf0;
             color: #c5a059;
         }
 
-        /* Tampilkan dropdown saat menu 'App' disentuh (hover) */
         nav ul li:hover .dropdown-content {
             display: block;
         }
 
-        /* --- Konten Utama --- */
-        .container {
-            flex: 1; /* Memastikan konten mengisi ruang agar footer tetap di bawah */
-            max-width: 900px;
-            margin: 80px auto;
+        /* --- HERO SECTION --- */
+        .hero {
             text-align: center;
-            padding: 0 20px;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #fff, #f9f9f9);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 5px;
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: 8px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
         }
 
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 900px;
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
             margin: 0 auto;
         }
 
+        /* --- THE TRIPLE THREAT (KATEGORI) --- */
+        .triple-threat {
+            padding: 60px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            flex: 1; /* Mendorong footer ke bawah */
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 45px 35px;
+            text-align: center;
+            border-radius: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #c5a059;
+        }
+
+        .card-icon {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .cta-mini {
+            text-decoration: none;
+            color: #c5a059;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            border: 2px solid #c5a059;
+            padding: 12px 25px;
+            border-radius: 50px;
+            transition: 0.3s;
+            align-self: center;
+        }
+
+        .cta-mini:hover {
+            background-color: #c5a059;
+            color: #fff;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: #c5a059;
+        }
+
         .footer-links {
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .footer-links a {
-            color: #c5a059;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 14px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: #c5a059;
         }
 
         .footer-bottom {
             font-size: 12px;
-            color: #888;
-            margin-top: 20px;
+            color: #555;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive HP */
+        @media (max-width: 768px) {
+            nav ul { gap: 15px; }
+            nav ul li a { font-size: 11px; letter-spacing: 1px; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -138,31 +233,60 @@
             <li class="dropdown">
                 <a href="#">App ▼</a>
                 <div class="dropdown-content">
-                    <a href="#">Mobile App</a>
-                    <a href="#">Web Tool</a>
-                    <a href="#">Settings</a>
+                    <a href="#">Inventory System</a>
+                    <a href="#">Member Portal</a>
+                    <a href="#">Order Tracking</a>
                 </div>
             </li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Welcome to Kado's</h1>
-        <p>Performa Juara, Kualitas Tanpa Kompromi. Jersey Custom untuk Tim Pemenang.</p>
+    <div class="hero">
+        <h1>THECONS</h1>
+        <p>Elevating Taste, Wear, and Vision to the next level.</p>
     </div>
+
+    <section class="triple-threat">
+        <div class="card">
+            <div>
+                <div class="card-icon">🍽️</div>
+                <h3>The Taste</h3>
+                <p>"Manjakan lidah dengan hidangan berkualitas. Dari camilan hingga katering, kami sajikan rasa yang autentik dengan bahan pilihan."</p>
+            </div>
+            <a href="#" class="cta-mini">Lihat Menu</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">👕</div>
+                <h3>The Wear</h3>
+                <p>"Ubah ide menjadi identitas. Konveksi terpercaya untuk seragam, jersey, hingga merchandise dengan jahitan rapi dan bahan premium."</p>
+            </div>
+            <a href="#" class="cta-mini">Mulai Pesanan</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎨</div>
+                <h3>The Vision</h3>
+                <p>"Visualkan mimpimu. Layanan desain grafis profesional untuk logo, branding, hingga konten media sosial yang ikonik."</p>
+            </div>
+            <a href="#" class="cta-mini">Konsultasi Desain</a>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
-            <h3>Kado's Cloth's</h3>
-            <p>Lapar? Butuh baju? Perlu desain? Klik di sini.</p>
+            <h3>THECONS DIGITAL</h3>
+            <p>Membangun masa depan digital yang lebih keren.</p>
             <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">WHATSAPP</a>
+                <a href="#">LINKEDIN</a>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Kerjaankhusus2-ops. All rights reserved.
+                &copy; 2026 Kerjaankhusus2-ops. Developed with Gemini.
             </div>
         </div>
     </footer>
